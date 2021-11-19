@@ -50,6 +50,9 @@
 						  </a>
 						  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<li><a class="dropdown-item" href="#" onclick="dclickEvent()">기분전환하게 신나는 노래</a></li>
+=======
+							<li><a class="dropdown-item" href="#">기분전환하게 신나는 노래</a></li>
+>>>>>>> 0589b46ebdf73ab8afde26231dcdfd7691649e4c
 							<li><a class="dropdown-item" href="#">나를 응원하는 노래</a></li>
 							<li><a class="dropdown-item" href="#">감성적이며 잔잔한 노래</a></li>
 							<li><a class="dropdown-item" href="#">지친 나를 위로해주는 노래</a></li>
@@ -141,6 +144,10 @@
 	<div class="listmov mt-4 mx-5 d-none">
 	  <!-- <h3>우울</h3> -->
 	  <iframe src="https://www.youtube.com/embed/nKbBTy7ioxI" id="mainmov" class="w-100 mainiFrame sad" title="음악추천"></iframe>
+=======
+	<div style="margin: 60px;" class="listmov d-none">
+	  <!-- <h3>우울</h3> -->
+	  <iframe src="https://www.youtube.com/embed/nKbBTy7ioxI" id="mainmov" class=" w-100 " title="음악추천" width="400px" height="300px"></iframe>
 	  <!-- <iframe class="sad sad1 w-100 d-none" src="https://www.youtube.com/embed/Z3u8hecLl54" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	  <iframe class="sad sad2 w-100 d-none"src="https://www.youtube.com/embed/UGsC5Y3umBY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	  <iframe class="sad sad3 w-100 d-none" src="https://www.youtube.com/embed/vbHqxU_zXOc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -175,6 +182,9 @@
 				<table class="table table-hover">
 				  <!-- 슬픔 -->    
 				  <tr id="11" class="btn-sad nav-item d-none" data-mov="sad1" data-sad1="https://www.youtube.com/embed/Z3u8hecLl54?autoplay=1&loop=1&playlist=Z3u8hecLl54">
+=======
+				  <tr id="11" class="btn-sad nav-item d-none" data-mov="sad1" data-sad1="https://www.youtube.com/embed/Z3u8hecLl54?autoplay=1&mute=1">
+>>>>>>> 0589b46ebdf73ab8afde26231dcdfd7691649e4c
 					<th scope="row">1</th>
 					<td>기분전환하게 신나는 노래<br><small>기분전환이 필요하면 이 노래를 들어보세요</small></td>
 				  </tr>
@@ -183,6 +193,7 @@
 					<td>나를 응원하는 노래<br><small>잠시 힘든 나를 위해 들어보세요</small></td>
 				  </tr>
 				  <tr id="33" class="btn-sad nav-item d-none" data-mov="sad3" data-sad3="https://www.youtube.com/embed/vbHqxU_zXOc?autoplay=1">
+				  <tr id="33" class="btn-sad nav-item d-none" data-mov="sad3" data-sad3="https://www.youtube.com/embed/vbHqxU_zXOc?autoplay=1&mute=1">
 					<th scope="row">3</th>
 					<td>감성적이며 잔잔한 노래<br><small>잔잔하지만 나를 위로해주는 노래를 들어보세요</small></td>
 				  </tr>
@@ -240,6 +251,7 @@
 	  </div>
 	</div>
 		</div>	
+		</div>
 	<script src="js/jquery-3.6.0.min.js"></script>
 		
 		
@@ -391,17 +403,21 @@
 		</script>
 		<script>
 		
+<<<<<<< HEAD
 function clickEvent(){
 	
 	
 	document.getElementById('mainmov').scrollIntoView();
 }
+=======
+>>>>>>> 0589b46ebdf73ab8afde26231dcdfd7691649e4c
 
 function mainf(){
 
 	// 초기화
 	mainMov = document.getElementById('mainmov');
 	// $mainMov = $(".mainmov");
+<<<<<<< HEAD
 	feeling = window.feeling; 		// window에서 feeling 객체 찾아서 값 넣음
 	$sadAll = $("." + feeling);		// .sad 클래스
 	$sadAll.addClass('d-none');		// 모두 안보이게 => 초기화
@@ -411,6 +427,15 @@ function mainf(){
 		$listmov.removeClass('d-none');
 	}
 	
+=======
+	feeling = window.feeling;
+	$sadAll = $("." + feeling);
+	$sadAll.addClass('d-none');
+	if(feeling != ''){
+		$listmov = $('.listmov');
+		$listmov.removeClass('d-none');
+	}
+>>>>>>> 0589b46ebdf73ab8afde26231dcdfd7691649e4c
 	$listshow = $('.btn-' + feeling);
 	$listshow.removeClass('d-none');
 
@@ -454,6 +479,7 @@ function mainf(){
 	});
 
 	$('.btn-' + feeling).click(function(e){
+<<<<<<< HEAD
 	  $target = $(e.target).closest('.btn-' + feeling);  //그냥 가져오면 tr td 같은 거 갖고옴 / 조건(.btn-sad) 만족하는 부모도 갖고오기
 		value = $target.data('mov');    // 타겟된 부분의 value값 가져옴
 		console.log(e.target);        // 로그 출력
@@ -464,6 +490,19 @@ function mainf(){
 		// $mainMov.removeClass('d-none');
 		// $sadAll.addClass('d-none');
 		// $movie.removeClass('d-none');
+=======
+	  $target = $(e.target).closest('.btn-' + feeling);  //그냥 가져오면 tr 같은 거 갖고옴 / 조건(.btn-sad) 만족하는 부모도 갖고오기
+		value = $target.data('mov');    // 타겟된 부분의 value값 가져옴
+		console.log(e.target);        // 로그 출력
+		$movie = $sadAll.filter('.' + value);    // id로 사용하기 위헤 .붙여줌
+
+		// srcs = $target.data('srcs');
+		srcs = $target.data(value);
+		mainMov.src = srcs;
+		// $mainMov.removeClass('d-none');
+		$sadAll.addClass('d-none');
+		$movie.removeClass('d-none');
+>>>>>>> 0589b46ebdf73ab8afde26231dcdfd7691649e4c
 
 		adjustHeightIFrames();
 
