@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
 		<!-- Required meta tags -->
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,10 +17,6 @@
 		/>
 
 		<link rel="stylesheet" href="style.css" />
-		
-		<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6196f0f2b74aee8e"></script>
-
 		
 	</head>
 	<body>
@@ -49,24 +45,21 @@
 							노래 목록
 						  </a>
 						  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#" onclick="dclickEvent()">기분전환하게 신나는 노래</a></li>
-=======
-							<li><a class="dropdown-item" href="#">기분전환하게 신나는 노래</a></li>
->>>>>>> 0589b46ebdf73ab8afde26231dcdfd7691649e4c
-							<li><a class="dropdown-item" href="#">나를 응원하는 노래</a></li>
-							<li><a class="dropdown-item" href="#">감성적이며 잔잔한 노래</a></li>
-							<li><a class="dropdown-item" href="#">지친 나를 위로해주는 노래</a></li>
-							<li><a class="dropdown-item" href="#">기분이 좋아지도록 도와주는 노래</a></li>
-							<li><a class="dropdown-item" href="#">상처를 위로해주는 노래</a></li>
-							<li><a class="dropdown-item" href="#">안정적인 기분을 느끼게 해주는 노래</a></li>
+							<li><a class="dropdown-item" href="#" onclick="clickEvent(1)">기분전환하게 신나는 노래</a></li>
+							<li><a class="dropdown-item" href="#" onclick="clickEvent(2)">나를 응원하는 노래</a></li>
+							<li><a class="dropdown-item" href="#" onclick="clickEvent(3)">감성적이며 잔잔한 노래</a></li>
+							<li><a class="dropdown-item" href="#" onclick="clickEvent(4)">지친 나를 위로해주는 노래</a></li>
+							<li><a class="dropdown-item" href="#" onclick="clickEvent(5)">기분이 좋아지도록 도와주는 노래</a></li>
+							<li><a class="dropdown-item" href="#" onclick="clickEvent(6)">상처를 위로해주는 노래</a></li>
+							<li><a class="dropdown-item" href="#" onclick="clickEvent(7)">안정적인 기분을 느끼게 해주는 노래</a></li>
 							  
-							<li><a class="dropdown-item" href="#">나는 최근 인기 팝송</a></li>
-							<li><a class="dropdown-item" href="#">여름같은 청량하고 신나는 노래</a></li>
-							<li><a class="dropdown-item" href="#">첫소절부터 신나는 노래</a></li>
-							<li><a class="dropdown-item" href="#">최신곡을 포함한 인기 팝송</a></li>
-							<li><a class="dropdown-item" href="#">아침에 듣기 좋은 신나는 노래</a></li>
-							<li><a class="dropdown-item" href="#">들뜨게 하는 브금</a></li>
-							<li><a class="dropdown-item" href="#">일렉트로닉 댄스 뮤직</a></li>
+							<li><a class="dropdown-item" href="#" onclick="clickEvent(8)">신나는 최근 인기 팝송</a></li>
+							<li><a class="dropdown-item" href="#" onclick="clickEvent(9)">여름같은 청량하고 신나는 노래</a></li>
+							<li><a class="dropdown-item" href="#" onclick="clickEvent(10)">첫소절부터 신나는 노래</a></li>
+							<li><a class="dropdown-item" href="#" onclick="clickEvent(11)">최신곡을 포함한 인기 팝송</a></li>
+							<li><a class="dropdown-item" href="#" onclick="clickEvent(12)">아침에 듣기 좋은 신나는 노래</a></li>
+							<li><a class="dropdown-item" href="#" onclick="clickEvent(13)">들뜨게 하는 브금</a></li>
+							<li><a class="dropdown-item" href="#" onclick="clickEvent(14)">일렉트로닉 댄스 뮤직</a></li>
 						  </ul>
 						</li>
 					</ul>
@@ -97,7 +90,7 @@
 			src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
 		></script>
 
-		<div class="container file-upload">
+		<div class="container file-upload" id="container_mov">
 			<div class="image-upload-wrap" style="width: 75%; margin: 0 auto;">
 				<input
 					class="file-upload-input"
@@ -123,11 +116,6 @@
 				<div id="label-container" class="d-flex flex-column justify-content-around"></div>
 				<div id="addThis" class="addthis_inline_share_toolbox_6lz1"></div>
 
-				
-                <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                <div class="addthis_inline_share_toolbox"></div>
-            
-				
 				<div class="pt-3 image-title-wrap">
 					<button
 						type="button p-2"
@@ -139,121 +127,93 @@
 				</div>
 			</div>
 
-	  <!-- <iframe src="https://www.youtube.com/embed/nKbBTy7ioxI" id="mainmov" title="구름이의 클라우드" width="400px" height="300px"></iframe> -->
+			<div class="listmov mt-5 mx-5 d-none" id="list_mov">
+				<!-- 음악 영상 -->
+				<iframe src="https://www.youtube.com/embed/nKbBTy7ioxI" id="mainmov" class="w-100 mainiFrame" title="음악추천11"></iframe>
+					
+				<!-- 목록 -->
+				<div class="accordion accordion-flush border mt-3 list" id="accordionPanelsStayOpenExample">
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="panelsStayOpen-headingOne">
+							<button class="accordion-button bg-transparent shadow-none" type="button" data-bs-toggle="collapse"
+							data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+							관련된 재생목록
+							</button>
+						</h2>
+						<div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+							aria-labelledby="panelsStayOpen-headingOne">
+							<div class="bg-light">
+								<div class=" navbar-nav me-auto my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 200px;">
+									<table class="table table-hover">
+									<!-- 슬픔 -->    
+									<tr id="1" class="btn-sad nav-item d-none" data-mov="sad1" data-sad1="https://www.youtube.com/embed/Z3u8hecLl54?autoplay=1&loop=1&playlist=Z3u8hecLl54">
+										<th scope="row">1</th>
+										<td>기분전환하게 신나는 노래<br><small>기분전환이 필요하면 이 노래를 들어보세요</small></td>
+									</tr>
+									<tr id="2" class="btn-sad nav-item d-none" data-mov="sad2" data-sad2="https://www.youtube.com/embed/UGsC5Y3umBY?autoplay=1&loop=1&playlist=UGsC5Y3umBY">
+										<th scope="row">2</th>
+										<td>나를 응원하는 노래<br><small>잠시 힘든 나를 위해 들어보세요</small></td>
+									</tr>
+									<tr id="3" class="btn-sad nav-item d-none" data-mov="sad3" data-sad3="https://www.youtube.com/embed/vbHqxU_zXOc?autoplay=1&loop=1&playlist=vbHqxU_zXOc">
+										<th scope="row">3</th>
+										<td>감성적이며 잔잔한 노래<br><small>잔잔하지만 나를 위로해주는 노래를 들어보세요</small></td>
+									</tr>
+									<tr id="4" class="btn-sad nav-item d-none" data-mov="sad4" data-sad4="https://www.youtube.com/embed/6DBpi4Tnedk?autoplay=1&loop=1&playlist=6DBpi4Tnedk">
+										<th scope="row">4</th>
+										<td>지친 나를 위로해주는 노래<br><small>지친 마음을 달래고 싶을 때 들어보세요</small></td>
+									</tr>
+									<tr id="5" class="btn-sad nav-item d-none" data-mov="sad5" data-sad5="https://www.youtube.com/embed/1ZZNJT6HpVg?autoplay=1&loop=1&playlist=1ZZNJT6HpVg">
+										<th scope="row">5</th>
+										<td>기분이 좋아지도록 도와주는 노래<br><small>천천히 기분이 좋아지는 것을 느껴보고 싶다면 이 노래를 들어보세요</small></td>
+									</tr>
+									<tr id="6" class="btn-sad nav-item d-none" data-mov="sad6" data-sad6="https://www.youtube.com/embed/nKbBTy7ioxI?autoplay=1&loop=1&playlist=nKbBTy7ioxI">
+										<th scope="row">6</th>
+										<td>상처를 위로해주는 노래<br><small>부드러운 목소리로 위로해주는 이 노래를 들어보세요</small></td>
+									</tr>
+									<tr id="7" class="btn-sad nav-item d-none" data-mov="sad7" data-sad7="https://www.youtube.com/embed/EDsPY0d9s4E?autoplay=1&loop=1&playlist=EDsPY0d9s4E">
+										<th scope="row">7</th>
+										<td>안정적인 기분을 느끼게 해주는 노래<br><small>잔잔하지만 리듬있는 노래를 들어보세요</small></td>
+									</tr>
 
-	<div class="listmov mt-4 mx-5 d-none">
-	  <!-- <h3>우울</h3> -->
-	  <iframe src="https://www.youtube.com/embed/nKbBTy7ioxI" id="mainmov" class="w-100 mainiFrame sad" title="음악추천"></iframe>
-=======
-	<div style="margin: 60px;" class="listmov d-none">
-	  <!-- <h3>우울</h3> -->
-	  <iframe src="https://www.youtube.com/embed/nKbBTy7ioxI" id="mainmov" class=" w-100 " title="음악추천" width="400px" height="300px"></iframe>
-	  <!-- <iframe class="sad sad1 w-100 d-none" src="https://www.youtube.com/embed/Z3u8hecLl54" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	  <iframe class="sad sad2 w-100 d-none"src="https://www.youtube.com/embed/UGsC5Y3umBY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	  <iframe class="sad sad3 w-100 d-none" src="https://www.youtube.com/embed/vbHqxU_zXOc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	  <iframe class="sad sad5 w-100 d-none" src="https://www.youtube.com/embed/6DBpi4Tnedk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	  <iframe class="sad sad4 w-100 d-none" src="https://www.youtube.com/embed/1ZZNJT6HpVg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	  <iframe class="sad sad6 w-100 d-none" src="https://www.youtube.com/embed/nKbBTy7ioxI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	  <iframe class="sad sad7 w-100 d-none" src="https://www.youtube.com/embed/EDsPY0d9s4E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-
-	  <!-- <h3>행복</h3> -->
-	  <!-- <iframe class="happy happy1 w-100 d-none" src="https://www.youtube.com/embed/6D_XQcMjSX0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	  <iframe class="happy happy2 w-100 d-none" src="https://www.youtube.com/embed/yr0T6w7Fmn4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	  <iframe class="happy happy3 w-100 d-none" src="https://www.youtube.com/embed/5RrRAHjuxIA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	  <iframe class="happy happy4 w-100 d-none" src="https://www.youtube.com/embed/8h3lLOjsRqw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	  <iframe class="happy happy5 w-100 d-none" src="https://www.youtube.com/embed/alJxe7ESLrI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	  <iframe class="happy happy6 w-100 d-none" src="https://www.youtube.com/embed/Ly-xVPhSDmw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	  <iframe class="happy happy7 w-100 d-none" src="https://www.youtube.com/embed/oZVGV0R1QaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-
-		
-	  <!-- 목록 -->
-	  <div class="accordion accordion-flush border mt-3" id="accordionPanelsStayOpenExample">
-		<div class="accordion-item">
-		  <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-			<button class="accordion-button bg-transparent shadow-none" type="button" data-bs-toggle="collapse"
-			  data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-			  관련된 재생목록
-			</button>
-		  </h2>
-		  <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
-			aria-labelledby="panelsStayOpen-headingOne">
-			<div class="bg-light">
-			  <div class=" navbar-nav me-auto my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 200px;">
-				<table class="table table-hover">
-				  <!-- 슬픔 -->    
-				  <tr id="11" class="btn-sad nav-item d-none" data-mov="sad1" data-sad1="https://www.youtube.com/embed/Z3u8hecLl54?autoplay=1&loop=1&playlist=Z3u8hecLl54">
-=======
-				  <tr id="11" class="btn-sad nav-item d-none" data-mov="sad1" data-sad1="https://www.youtube.com/embed/Z3u8hecLl54?autoplay=1&mute=1">
->>>>>>> 0589b46ebdf73ab8afde26231dcdfd7691649e4c
-					<th scope="row">1</th>
-					<td>기분전환하게 신나는 노래<br><small>기분전환이 필요하면 이 노래를 들어보세요</small></td>
-				  </tr>
-				  <tr id="22" class="btn-sad nav-item d-none" data-mov="sad2" data-sad2="https://www.youtube.com/embed/UGsC5Y3umBY?autoplay=1&mute=1">
-					<th scope="row">2</th>
-					<td>나를 응원하는 노래<br><small>잠시 힘든 나를 위해 들어보세요</small></td>
-				  </tr>
-				  <tr id="33" class="btn-sad nav-item d-none" data-mov="sad3" data-sad3="https://www.youtube.com/embed/vbHqxU_zXOc?autoplay=1">
-				  <tr id="33" class="btn-sad nav-item d-none" data-mov="sad3" data-sad3="https://www.youtube.com/embed/vbHqxU_zXOc?autoplay=1&mute=1">
-					<th scope="row">3</th>
-					<td>감성적이며 잔잔한 노래<br><small>잔잔하지만 나를 위로해주는 노래를 들어보세요</small></td>
-				  </tr>
-				  <tr id="44" class="btn-sad nav-item d-none" data-mov="sad4" data-sad4="https://www.youtube.com/embed/6DBpi4Tnedk?autoplay=1&mute=1">
-					<th scope="row">4</th>
-					<td>지친 나를 위로해주는 노래<br><small>지친 마음을 달래고 싶을 때 들어보세요</small></td>
-				  </tr>
-				  <tr id="55" class="btn-sad nav-item d-none" data-mov="sad5" data-sad5="https://www.youtube.com/embed/1ZZNJT6HpVg?autoplay=1&mute=1">
-					<th scope="row">5</th>
-					<td>기분이 좋아지도록 도와주는 노래<br><small>천천히 기분이 좋아지는 것을 느껴보고 싶다면 이 노래를 들어보세요</small></td>
-				  </tr>
-				  <tr id="66" class="btn-sad nav-item d-none" data-mov="sad6" data-sad6="https://www.youtube.com/embed/nKbBTy7ioxI?autoplay=1&mute=1">
-					<th scope="row">6</th>
-					<td>상처를 위로해주는 노래<br><small>부드러운 목소리로 위로해주는 이 노래를 들어보세요</small></td>
-				  </tr>
-				  <tr id="77" class="btn-sad nav-item d-none" data-mov="sad7" data-sad7="https://www.youtube.com/embed/EDsPY0d9s4E?autoplay=1&mute=1">
-					<th scope="row">7</th>
-					<td>안정적인 기분을 느끼게 해주는 노래<br><small>잔잔하지만 리듬있는 노래를 들어보세요</small></td>
-				  </tr>
-
-				  <!-- 행복 -->              
-				  <tr id="11" class="btn-happy nav-item d-none" data-mov="happy1" data-happy1="https://www.youtube.com/embed/6D_XQcMjSX0?autoplay=1&mute=1">
-					<th scope="row">1</th>
-					<td>신나는 최근 인기 팝송<br><small>최근 인기있는 팝송을 들어보세요</small></td>
-				  </tr>
-				  <tr id="22" class="btn-happy nav-item d-none" data-mov="happy2" data-happy2="https://www.youtube.com/embed/yr0T6w7Fmn4?autoplay=1&mute=1">
-					<th scope="row">2</th>
-					<td>여름같은 청량하고 신나는 노래<br><small>청량한 느낌도 주는 이 노래를 들어보세요</small></td>
-				  </tr>
-				  <tr id="33" class="btn-happy nav-item d-none" data-mov="happy3" data-happy3="https://www.youtube.com/embed/5RrRAHjuxIA?autoplay=1&mute=1">
-					<th scope="row">3</th>
-					<td>첫소절부터 신나는 노래<br><small>첫소절부터 신나는 분위기를 느껴보고 싶다면 이 노래를 들어보세요</small></td>
-				  </tr>
-				  <tr id="44" class="btn-happy nav-item d-none" data-mov="happy4" data-happy4="https://www.youtube.com/embed/8h3lLOjsRqw?autoplay=1&mute=1">
-					<th scope="row">4</th>
-					<td>최신곡을 포함한 인기 팝송<br><small>은근 신나는 이 노래를 들어보세요</small></td>
-				  </tr>
-				  <tr id="55" class="btn-happy nav-item d-none" data-mov="happy5" data-happy5="https://www.youtube.com/embed/alJxe7ESLrI?autoplay=1&mute=1">
-					<th scope="row">5</th>
-					<td>아침에 듣기 좋은 신나는 노래<br><small>아침에 듣기 좋은 잔잔하게 시작해서 신나는 노래를 들어보세요</small></td>
-				  </tr>
-				  <tr id="66" class="btn-happy nav-item d-none" data-mov="happy6" data-happy6="https://www.youtube.com/embed/Ly-xVPhSDmw?autoplay=1&mute=1">
-					<th scope="row">6</th>
-					<td>들뜨게 하는 브금<br><small>가사가 없지만 신나는 브금을 들어보세요</small></td>
-				  </tr>
-				  <tr id="77" class="btn-happy nav-item d-none" data-mov="happy7" data-happy7="https://www.youtube.com/embed/oZVGV0R1QaI?autoplay=1&mute=1">
-					<th scope="row">7</th>
-					<td>일렉트로닉 댄스 뮤직<br><small>댄스 파티에 어울리는 EDM 노래를 들어보세요</small></td>
-				  </tr>
-				</table>
-			  </div>
+									<!-- 행복 -->              
+									<tr id="8" class="btn-happy nav-item d-none" data-mov="happy1" data-happy1="https://www.youtube.com/embed/6D_XQcMjSX0?autoplay=1&loop=1&playlist=6D_XQcMjSX0">
+										<th scope="row">1</th>
+										<td>신나는 최근 인기 팝송<br><small>최근 인기있는 팝송을 들어보세요</small></td>
+									</tr>
+									<tr id="9" class="btn-happy nav-item d-none" data-mov="happy2" data-happy2="https://www.youtube.com/embed/yr0T6w7Fmn4?autoplay=1&loop=1&playlist=yr0T6w7Fmn4">
+										<th scope="row">2</th>
+										<td>여름같은 청량하고 신나는 노래<br><small>청량한 느낌도 주는 이 노래를 들어보세요</small></td>
+									</tr>
+									<tr id="10" class="btn-happy nav-item d-none" data-mov="happy3" data-happy3="https://www.youtube.com/embed/5RrRAHjuxIA?autoplay=1&loop=1&playlist=5RrRAHjuxIA">
+										<th scope="row">3</th>
+										<td>첫소절부터 신나는 노래<br><small>첫소절부터 신나는 분위기를 느껴보고 싶다면 이 노래를 들어보세요</small></td>
+									</tr>
+									<tr id="11" class="btn-happy nav-item d-none" data-mov="happy4" data-happy4="https://www.youtube.com/embed/8h3lLOjsRqw?autoplay=1&loop=1&playlist=8h3lLOjsRqw">
+										<th scope="row">4</th>
+										<td>최신곡을 포함한 인기 팝송<br><small>은근 신나는 이 노래를 들어보세요</small></td>
+									</tr>
+									<tr id="12" class="btn-happy nav-item d-none" data-mov="happy5" data-happy5="https://www.youtube.com/embed/alJxe7ESLrI?autoplay=1&loop=1&playlist=alJxe7ESLrI">
+										<th scope="row">5</th>
+										<td>아침에 듣기 좋은 신나는 노래<br><small>아침에 듣기 좋은 잔잔하게 시작해서 신나는 노래를 들어보세요</small></td>
+									</tr>
+									<tr id="13" class="btn-happy nav-item d-none" data-mov="happy6" data-happy6="https://www.youtube.com/embed/Ly-xVPhSDmw?autoplay=1&loop=1&playlist=Ly-xVPhSDmw">
+										<th scope="row">6</th>
+										<td>들뜨게 하는 브금<br><small>가사가 없지만 신나는 브금을 들어보세요</small></td>
+									</tr>
+									<tr id="14" class="btn-happy nav-item d-none" data-mov="happy7" data-happy7="https://www.youtube.com/embed/oZVGV0R1QaI?autoplay=1&loop=1&playlist=oZVGV0R1QaI">
+										<th scope="row">7</th>
+										<td>일렉트로닉 댄스 뮤직<br><small>댄스 파티에 어울리는 EDM 노래를 들어보세요</small></td>
+									</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-		  </div>
-		</div>
-	  </div>
-	</div>
 		</div>	
-		</div>
-	<script src="js/jquery-3.6.0.min.js"></script>
-		
+
+		<script src="js/jquery-3.6.0.min.js"></script>
 		
 		<footer class="footer pt-5 container d-flex justify-content-center">
 			<div>
@@ -333,7 +293,7 @@
 				}
 			}
 
-			feeling = '';  // 기분 상태 sad or happy
+			feeling = '';  // 기분 상태 초기화 (sad or happy)
 			// run the webcam image through the image model
 			async function predict() {
 				// predict can take in an image, video or canvas html element
@@ -347,12 +307,12 @@
 					case 'happy':
 						resultTitle = '기쁜 얼굴';
 						resultExplain = '기쁜 당신을 위한 노래를 틀어드릴게요';
-							feeling = 'happy';
+							feeling = 'happy';	 // 기분상태 happy
 						break;
 					case 'sad':
 						resultTitle = '슬픈 얼굴';
 						resultExplain = '슬픈 당신을 위한 노래를 틀어드릴게요';
-							feeling = 'sad';
+							feeling = 'sad';	 // 기분상태 sad
 						break;
 				}
 
@@ -397,117 +357,115 @@
 						'%</span></div></div>';
 					labelContainer.childNodes[i].innerHTML = label + bar;
 					
-						mainf();
+						mainf('');
 				}
 			}
 		</script>
 		<script>
-		
-<<<<<<< HEAD
-function clickEvent(){
-	
-	
-	document.getElementById('mainmov').scrollIntoView();
-}
-=======
->>>>>>> 0589b46ebdf73ab8afde26231dcdfd7691649e4c
+					
+			// 네브바 노래 클릭 시 포커스 + 해당 노래로 바꾸는 함수
+			function clickEvent(num){
+				mainMov = document.getElementById('mainmov');
 
-function mainf(){
+				$target = $('#' + num); 
+				
+				// 영상
+				value = $target.data('mov'); 
+				srcs = $target.data(value);
+				mainMov.src = srcs;
 
-	// 초기화
-	mainMov = document.getElementById('mainmov');
-	// $mainMov = $(".mainmov");
-<<<<<<< HEAD
-	feeling = window.feeling; 		// window에서 feeling 객체 찾아서 값 넣음
-	$sadAll = $("." + feeling);		// .sad 클래스
-	$sadAll.addClass('d-none');		// 모두 안보이게 => 초기화
-	
-	if(feeling != ''){		// 결과값 있다면 영상+목록 보이게 
-		$listmov = $('.listmov');
-		$listmov.removeClass('d-none');
-	}
-	
-=======
-	feeling = window.feeling;
-	$sadAll = $("." + feeling);
-	$sadAll.addClass('d-none');
-	if(feeling != ''){
-		$listmov = $('.listmov');
-		$listmov.removeClass('d-none');
-	}
->>>>>>> 0589b46ebdf73ab8afde26231dcdfd7691649e4c
-	$listshow = $('.btn-' + feeling);
-	$listshow.removeClass('d-none');
+				// 영상 사이즈 조절
+				adjustHeightIFrames();
+				// 영상 보여주기
+				$listmov = $('.listmov');
+				$listmov.removeClass('d-none');
+				
+				// 목록 가리기
+				if(window.feeling ==""){
+					$list = $('.list');
+					$list.addClass('d-none');
+				}
 
-	// 랜덤숫자 -> 보여주는 이미지 랜덤으로
-	const rand_1_7 = Math.floor(Math.random() * 7) +1; // 1~7 랜덤숫자 생성 (0~ 9.9999...)소수점 제거
-	// alert(rand_1_7);
-	$randomnum = $('.' + feeling + rand_1_7);
-	$randomnum.removeClass('d-none');
-	$focus = $('#'+ rand_1_7*11);
+				// iframe 높이조정
+				adjustHeightIFrames();
+			
+				// 스크롤 이동-앞에 스크롤 있어서 바로 적용x (150 걸어주지 않으면 적용됐다 다시 맨 위로 이동됨)
+				setTimeout(() => {
+					mainMov.scrollIntoView();
+				}, 150);
 
-	// 잠시 시작값 초기화
-	if(feeling=='sad')
-		mainMov.src = "https://www.youtube.com/embed/Z3u8hecLl54?autoplay=1&mute=1";
-	else 
-		mainMov.src = "https://www.youtube.com/embed/6D_XQcMjSX0?autoplay=1&mute=1";
-	
-	// $listshowRan = $('.btn-' + feeling);
-	// // values = $listshowRan.data('mov').find(feeling + rand_1_7);
-	
-	// alert(feeling + rand_1_7);
-	// mainMov.src = $listshowRan.data(feeling + rand_1_7);
-	// alert($listshowRan.data(feeling + rand_1_7));
-	// //alert(feeling + rand_1_7);
-	
-	
-	  //Javascript
-	  //최초 로드 시 iframe 높이값 비율에 맞게 세팅
+				// 얼굴인식 한 상태에서 nav노래목록 클릭시 - 목록 남도록 + sad or happy작동되도록
+				mainf(num)
+			}
 
-	var $videoIframes = $('.' + feeling);
-	var adjustHeightIFrames = function() {
-		$videoIframes.each(function() {
-			this.setAttribute('height', this.offsetWidth * 0.5625);
-		});
-	};
 
-	  // 초기 iframe 높이조정
-	adjustHeightIFrames();
+			//Javascript
+			//최초 로드 시 iframe 높이값 비율에 맞게 세팅
+			var $videoIframes = $('.mainiFrame');
+			var adjustHeightIFrames = function() {
+				$videoIframes.each(function() {
+					this.setAttribute('height', this.offsetWidth * 0.5625);
+				});
+			};
 
-	window.addEventListener('resize', function () {   //윈도우 사이즈 바뀔 때 마다 ifream 높이 재조정
-		adjustHeightIFrames();
-	});
+			window.addEventListener('resize', function () {   //윈도우 사이즈 바뀔 때 마다 ifream 높이 재조정
+				adjustHeightIFrames();
+			});
 
-	$('.btn-' + feeling).click(function(e){
-<<<<<<< HEAD
-	  $target = $(e.target).closest('.btn-' + feeling);  //그냥 가져오면 tr td 같은 거 갖고옴 / 조건(.btn-sad) 만족하는 부모도 갖고오기
-		value = $target.data('mov');    // 타겟된 부분의 value값 가져옴
-		console.log(e.target);        // 로그 출력
-		// $movie = $sadAll.filter('.' + value);    // id로 사용하기 위헤 .붙여줌
 
-		srcs = $target.data(value);
-		mainMov.src = srcs;
-		// $mainMov.removeClass('d-none');
-		// $sadAll.addClass('d-none');
-		// $movie.removeClass('d-none');
-=======
-	  $target = $(e.target).closest('.btn-' + feeling);  //그냥 가져오면 tr 같은 거 갖고옴 / 조건(.btn-sad) 만족하는 부모도 갖고오기
-		value = $target.data('mov');    // 타겟된 부분의 value값 가져옴
-		console.log(e.target);        // 로그 출력
-		$movie = $sadAll.filter('.' + value);    // id로 사용하기 위헤 .붙여줌
+			function mainf(num){
 
-		// srcs = $target.data('srcs');
-		srcs = $target.data(value);
-		mainMov.src = srcs;
-		// $mainMov.removeClass('d-none');
-		$sadAll.addClass('d-none');
-		$movie.removeClass('d-none');
->>>>>>> 0589b46ebdf73ab8afde26231dcdfd7691649e4c
+				// 초기화
+				mainMov = document.getElementById('mainmov');
+				feeling = window.feeling; 		// window에서 feeling 객체 찾아서 값 넣음
+				$sadAll = $("." + feeling);		// .sad 클래스
+				$sadAll.addClass('d-none');		// 모두 안보이게 => 초기화
+				
+				if(feeling != ''){		// 결과값 있다면 영상+목록 보이게 
+					$listmov = $('.listmov');
+					$listmov.removeClass('d-none');
+					
+					// 목록 보이기
+					$list = $('.list');
+					$list.removeClass('d-none');
+					$listshow = $('.btn-' + feeling);
+					$listshow.removeClass('d-none');
+				}
+				
 
-		adjustHeightIFrames();
+				// 랜덤숫자 -> 보여주는 영상 랜덤으로
+				const rand_1_7 = Math.floor(Math.random() * 7) +1; // 1~14 랜덤숫자 생성 (0~ 9.9999...)소수점 제거
 
-	});
-}
+				if(num ==''){		// nav목록을 누르지 않고 얼굴인식으로 값을 받아왔을때
+					if(feeling =="sad"){			// sad 일때 1~7
+						$target = $('#' + rand_1_7); 
+					} else if(feeling =="happy"){	// happy 일때 8~14
+						$target = $('#' + (rand_1_7+7)); 
+					} 
+				} else{		// 노래 있는 상태에서 nav목록 누르면 nav목록 값 받아와서 영상 보여주기
+					$target = $('#' + num); 
+				}
+				
+				// 영상
+				value = $target.data('mov'); 
+				srcs = $target.data(value);
+				mainMov.src = srcs;
+
+				// 초기 iframe 높이조정
+				adjustHeightIFrames();
+
+				$('.btn-' + feeling).click(function(e){
+					$target = $(e.target).closest('.btn-' + feeling);  //그냥 가져오면 tr td 같은 거 갖고옴 / 조건(.btn-sad) 만족하는 부모도 갖고오기
+					value = $target.data('mov');    // 타겟된 부분의 value값(mov) 가져옴
+					console.log(e.target);        // 로그 출력
+					
+					srcs = $target.data(value);		// 타겟된 부분의 value값(sad or happy +숫자)가져옴
+					mainMov.src = srcs;
+
+					adjustHeightIFrames();
+
+				});
+			}
 
 		</script>
 	</body>
